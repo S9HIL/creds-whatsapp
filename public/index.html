@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WhatsApp Bulk Sender</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="logo">📱</div>
+      <h1>WhatsApp Bulk Sender</h1>
+      <p class="subtitle">Send bulk messages easily</p>
+    </div>
+    
+    <form id="messageForm">
+      <!-- Creds File -->
+      <div class="form-group">
+        <label>🔐 Upload creds.json</label>
+        <div class="file-input-wrapper">
+          <input type="file" id="credsFile" accept=".json" required>
+          <label for="credsFile" class="file-input-label">
+            📄 Choose creds.json file
+          </label>
+          <div id="credsFileName" class="file-name"></div>
+        </div>
+      </div>
+      
+      <!-- Message File -->
+      <div class="form-group">
+        <label>📝 Upload Message File (.txt)</label>
+        <div class="file-input-wrapper">
+          <input type="file" id="messageFile" accept=".txt" required>
+          <label for="messageFile" class="file-input-label">
+            📄 Choose message file
+          </label>
+          <div id="messageFileName" class="file-name"></div>
+        </div>
+      </div>
+      
+      <!-- Target Number -->
+      <div class="form-group">
+        <label>📞 Target Number</label>
+        <input type="text" id="targetNumber" placeholder="91XXXXXXXXXX" required>
+      </div>
+      
+      <!-- Delay -->
+      <div class="form-group">
+        <label>⏱️ Delay (seconds)</label>
+        <input type="number" id="delayTime" placeholder="5" min="1" value="5" required>
+      </div>
+      
+      <!-- Prefix -->
+      <div class="form-group">
+        <label>👤 Message Prefix</label>
+        <input type="text" id="hatersName" placeholder="From: John" required>
+      </div>
+      
+      <button type="submit" id="submitBtn">🚀 Start Sending</button>
+    </form>
+    
+    <div id="result"></div>
+    
+    <!-- Batches -->
+    <div class="batches-section">
+      <h2>📊 Active Batches</h2>
+      <div id="batchesContainer">
+        <p class="no-batches">No active batches</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
